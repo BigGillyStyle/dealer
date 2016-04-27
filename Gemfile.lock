@@ -182,7 +182,7 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
-    parser (2.3.0.7)
+    parser (2.3.1.0)
       ast (~> 2.2)
     pg (0.18.4)
     powerpack (0.1.1)
