@@ -42,7 +42,7 @@ GEM
       rake (>= 10.4, < 12.0)
     arel (6.0.3)
     ast (2.2.0)
-    autoprefixer-rails (6.3.6.1)
+    autoprefixer-rails (6.3.6.2)
       execjs
     awesome_print (1.6.1)
     aws-sdk-v1 (1.66.0)
@@ -136,7 +136,7 @@ GEM
     hitimes (1.2.4)
     i18n (0.7.0)
     interception (0.5)
-    jbuilder (2.4.1)
+    jbuilder (2.5.0)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
     jquery-fileupload-rails (0.4.6)
@@ -367,9 +367,6 @@ DEPENDENCIES
   spring-commands-rspec
   sucker_punch (~> 1.6.0)
   uglifier
-
-RUBY VERSION
-   ruby 2.3.1p112
 
 BUNDLED WITH
    1.12.5
