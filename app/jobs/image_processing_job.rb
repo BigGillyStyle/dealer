@@ -19,7 +19,7 @@ class ImageProcessingJob < ActiveJob::Base
     unless image.processed # don't re-process image
       ActiveRecord::Base.connection_pool.with_connection do
         direct_upload_url_data = Image::DIRECT_UPLOAD_URL_FORMAT.match(image.direct_upload_url)
-        s3 = AWS::S3.new
+        s3 = Aws::S3::Resource.new
 
         if image.post_process_required?
           image.image = URI.parse(URI.escape(image.direct_upload_url))

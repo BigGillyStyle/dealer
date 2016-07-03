@@ -4,5 +4,6 @@ Paperclip::Attachment.default_options.merge!(
   storage:              :s3,
   s3_credentials:       Rails.configuration.aws,
   s3_permissions:       :private,
-  s3_protocol:          'https'
+  s3_protocol:          'https',
+  s3_region:            'us-east-1'
 )
