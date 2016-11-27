@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
-gem 'rails', '~> 4.2.7.1'
+gem 'rails', '5.0.0.1'
 
 # views
 gem 'sass-rails'
@@ -36,7 +36,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'foreman'
-  gem 'quiet_assets'
+  gem 'thor', '0.19.1' # https://github.com/ddollar/foreman/issues/653
   gem 'rails_layout'
   gem 'spring'
   gem 'spring-commands-rspec'
@@ -57,6 +57,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   gem 'rubocop', require: false
 end
 
