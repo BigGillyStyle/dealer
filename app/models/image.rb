@@ -5,7 +5,7 @@
 #
 # Article: http://helabs.com/blog/2014/02/21/how-to-upload-big-files-to-amazon-s3-through-heroku/
 # Code: https://github.com/aliismayilov/bigphotoblog
-class Image < ActiveRecord::Base
+class Image < ApplicationRecord
   BUCKET_NAME = Rails.configuration.aws[:bucket]
   DIRECT_UPLOAD_URL_FORMAT = %r{\Ahttps:\/\/#{BUCKET_NAME}.s3\.amazonaws\.com\/(?<path>uploads\/.+\/(?<filename>.+))\z}.freeze
 

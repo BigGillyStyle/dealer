@@ -1,4 +1,4 @@
-class Vehicle < ActiveRecord::Base
+class Vehicle < ApplicationRecord
   has_many :images
 
   monetize :asking_price_cents, allow_nil: true, numericality: { greater_than_or_equal_to: 0 }

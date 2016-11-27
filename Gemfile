@@ -28,9 +28,10 @@ gem 'rack-timeout'
 gem 'awesome_print'
 gem 'newrelic_rpm'
 gem 'rollbar'
-gem 'sucker_punch', '~> 1.6.0' # upgrade 2.0 with Rails 5: https://github.com/brandonhilkert/sucker_punch/issues/159
+gem 'sucker_punch'
 gem 'money-rails'
 gem 'rake'
+gem 'rb-readline' # https://github.com/rails/rails/issues/26658
 
 group :development do
   gem 'better_errors'

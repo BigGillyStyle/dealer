@@ -2,7 +2,7 @@
 #
 # Article: http://blog.littleblimp.com/post/53942611764/direct-uploads-to-s3-with-rails-paperclip-and
 # Code: https://github.com/uberllama/s3_direct_upload_example/blob/master/app/models/document.rb
-class ImageProcessingJob < ActiveJob::Base
+class ImageProcessingJob < ApplicationJob
   queue_as :default
 
   # Final upload processing step:
