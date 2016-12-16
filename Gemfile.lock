@@ -48,13 +48,13 @@ GEM
     autoprefixer-rails (6.5.4)
       execjs
     awesome_print (1.7.0)
-    aws-sdk (2.6.36)
-      aws-sdk-resources (= 2.6.36)
-    aws-sdk-core (2.6.36)
+    aws-sdk (2.6.38)
+      aws-sdk-resources (= 2.6.38)
+    aws-sdk-core (2.6.38)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.6.36)
-      aws-sdk-core (= 2.6.36)
+    aws-sdk-resources (2.6.38)
+      aws-sdk-core (= 2.6.38)
     aws-sigv4 (1.0.0)
     bcrypt (3.1.11)
     better_errors (2.1.1)
@@ -91,7 +91,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.11.1)
+    coffee-script-source (1.12.2)
     concurrent-ruby (1.0.2)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
