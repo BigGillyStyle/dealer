@@ -45,7 +45,7 @@ GEM
       rake (>= 10.4, < 12.0)
     arel (7.1.4)
     ast (2.3.0)
-    autoprefixer-rails (6.7.7.2)
+    autoprefixer-rails (7.0.0)
       execjs
     awesome_print (1.7.0)
     aws-sdk (2.9.15)
@@ -216,7 +216,7 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
-    rails_layout (1.0.34)
+    rails_layout (1.0.35)
     rails_serve_static_assets (0.0.5)
     rails_stdout_logging (0.0.5)
     railties (5.0.0.1)
