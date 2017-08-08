@@ -45,7 +45,7 @@ GEM
       rake (>= 10.4, < 13.0)
     arel (7.1.4)
     ast (2.3.0)
-    autoprefixer-rails (7.1.2.3)
+    autoprefixer-rails (7.1.2.4)
       execjs
     awesome_print (1.8.0)
     aws-sdk (2.10.21)
