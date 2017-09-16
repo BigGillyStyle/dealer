@@ -1,7 +1,7 @@
 language: ruby
 cache: bundler
 rvm:
-- 2.3.3
+- 2.3.4
 before_script:
 - cp config/database.yml.travis config/database.yml
 - psql -c 'create database travis_ci_test;' -U postgres
