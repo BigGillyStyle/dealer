@@ -9,7 +9,7 @@ script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rspec spec
 addons:
-  postgresql: '9.5'
+  postgresql: '9.6'
   code_climate:
     repo_token: 6acb3ae469a533292083b76b2b5a27796f7ee25e9c6cdfbf81e99621047b7977
 bundler_args: "--without production"
