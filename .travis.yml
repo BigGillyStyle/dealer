@@ -1,7 +1,7 @@
 language: ruby
 cache: bundler
 rvm:
-- 2.3.1
+- 2.3.3
 before_script:
 - cp config/database.yml.travis config/database.yml
 - psql -c 'create database travis_ci_test;' -U postgres
@@ -9,7 +9,7 @@ script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rspec spec
 addons:
-  postgresql: '9.4'
+  postgresql: '9.5'
   code_climate:
     repo_token: 6acb3ae469a533292083b76b2b5a27796f7ee25e9c6cdfbf81e99621047b7977
 bundler_args: "--without production"
