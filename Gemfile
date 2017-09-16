@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.3'
 
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.1.4'
 
 # views
 gem 'sass-rails'
@@ -15,7 +15,7 @@ gem 'font-awesome-sass'
 gem 'high_voltage'
 
 # data
-gem 'aws-sdk', '~> 2'
+gem 'aws-sdk', '~> 2.0'
 gem 'paperclip'
 gem 's3_direct_upload'
 gem 'pg'
@@ -37,7 +37,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'foreman'
-  gem 'thor', '0.19.1' # https://github.com/ddollar/foreman/issues/653
+  gem 'thor', '0.19.1'
   gem 'rails_layout'
   gem 'spring'
   gem 'spring-commands-rspec'
