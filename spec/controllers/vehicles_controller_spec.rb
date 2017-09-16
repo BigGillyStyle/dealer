@@ -27,13 +27,13 @@ RSpec.describe VehiclesController, type: :controller do
     describe 'GET #show' do
       it 'renders the :show template' do
         vehicle = create :vehicle
-        get(:show, id: vehicle.id)
+        get(:show, params: { id: vehicle.id })
         expect(response).to render_template(:show)
       end
 
       it 'renders the vehicle' do
         vehicle = create :vehicle
-        get(:show, id: vehicle.id)
+        get(:show, params: { id: vehicle.id })
         expect(assigns(:vehicle)).to eq(vehicle)
       end
     end
@@ -53,7 +53,7 @@ RSpec.describe VehiclesController, type: :controller do
     { edit: :get, update: :patch, destroy: :delete }.each do |action, meth|
       it "prevents non-admin users from accessing the #{action} action" do
         vehicle = create(:vehicle)
-        send(meth, action, id: vehicle.id)
+        send(meth, action, params: { id: vehicle.id })
         expect(response).to redirect_to(root_url)
         expect(flash[:error]).to match(/^You are not an admin/)
       end
@@ -83,12 +83,12 @@ RSpec.describe VehiclesController, type: :controller do
 
         it 'does not save the new vehicle in the database' do
           expect do
-            post(:create, vehicle: invalid_attrs)
+            post(:create, params: { vehicle: invalid_attrs })
           end.not_to change(Vehicle, :count)
         end
 
         it 're-renders the :new template' do
-          post(:create, vehicle: invalid_attrs)
+          post(:create, params: { vehicle: invalid_attrs })
           expect(response).to render_template(:new)
         end
       end
@@ -97,13 +97,13 @@ RSpec.describe VehiclesController, type: :controller do
     describe 'GET #edit' do
       it 'assigns the requested vehicle to @vehicle' do
         vehicle = create(:vehicle)
-        get :edit, id: vehicle.id
+        get :edit, params: { id: vehicle.id }
         expect(assigns(:vehicle)).to eq(vehicle)
       end
 
       it 'renders the :edit template' do
         vehicle = create(:vehicle)
-        get :edit, id: vehicle.id
+        get :edit, params: { id: vehicle.id }
         expect(response).to render_template(:edit)
       end
     end
@@ -117,42 +117,42 @@ RSpec.describe VehiclesController, type: :controller do
 
       context 'with invalid attributes' do
         it "does not change the vehicle's attributes" do
-          patch :update, id: @vehicle.id,
+          patch :update, params: { id: @vehicle.id,
                          vehicle: attributes_for(:vehicle,
                                                  year: 2001,
-                                                 make: nil)
+                                                 make: nil) }
           @vehicle.reload
           expect(@vehicle.year).not_to eq(2001)
           expect(@vehicle.make).to eq('Ford')
         end
 
         it 're-renders the edit template' do
-          patch :update, id: @vehicle.id,
+          patch :update, params: { id: @vehicle.id,
                          vehicle: attributes_for(:vehicle,
                                                  year: 2001,
-                                                 make: nil)
+                                                 make: nil) }
           expect(response).to render_template(:edit)
         end
       end
 
       context 'with valid attributes' do
         it 'locates the requested vehicle' do
-          patch :update, id: @vehicle.id, vehicle: attributes_for(:vehicle)
+          patch :update, params: { id: @vehicle.id, vehicle: attributes_for(:vehicle) }
           expect(assigns(:vehicle)).to eq(@vehicle)
         end
 
         it "changes @vehicle's attributes" do
-          patch :update, id: @vehicle.id,
+          patch :update, params: { id: @vehicle.id,
                          vehicle: attributes_for(:vehicle,
                                                  year: 2001,
-                                                 make: 'Chevy')
+                                                 make: 'Chevy') }
           @vehicle.reload
           expect(@vehicle.year).to eq(2001)
           expect(@vehicle.make).to eq('Chevy')
         end
 
         it 'redirects to the updated vehicle' do
-          patch :update, id: @vehicle, vehicle: attributes_for(:vehicle)
+          patch :update, params: { id: @vehicle, vehicle: attributes_for(:vehicle) }
           expect(response).to render_template(:show)
         end
       end
@@ -165,12 +165,12 @@ RSpec.describe VehiclesController, type: :controller do
 
       it 'deletes the vehicle' do
         expect(Vehicle.count).to be(1)
-        delete :destroy, id: @vehicle.id
+        delete :destroy, params: { id: @vehicle.id }
         expect(Vehicle.count).to be(0)
       end
 
       it 'redirects to the home page' do
-        delete :destroy, id: @vehicle
+        delete :destroy, params: { id: @vehicle }
         expect(response).to redirect_to(root_url)
       end
     end
@@ -181,13 +181,13 @@ RSpec.describe VehiclesController, type: :controller do
       end
 
       it 'renders the vehicle inactive' do
-        patch :archive, id: @vehicle.id
+        patch :archive, params: { id: @vehicle.id }
         @vehicle.reload
         expect(@vehicle.active).to be_falsey
       end
 
       it 'redirects to the home page' do
-        patch :archive, id: @vehicle
+        patch :archive, params: { id: @vehicle }
         expect(response).to redirect_to(root_url)
       end
     end
